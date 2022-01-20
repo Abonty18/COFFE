@@ -3,6 +3,7 @@ import { deepPurple } from '@material-ui/core/colors';
 
 export default makeStyles((theme) => ({
   mainContainer: {
+    
     borderRadius: 15,
     margin: '30px 0',
     display: 'flex',
@@ -10,10 +11,14 @@ export default makeStyles((theme) => ({
     justifyContent: 'space-between',
     alignItems: 'center',
     padding: '10px 50px',
-  },
+    
+     
+      },
+
   heading: {
     color: 'rgba(0,183,255, 1)',
     textDecoration: 'none',
+    
   },
   image: {
     marginLeft: '15px',
@@ -33,6 +38,7 @@ export default makeStyles((theme) => ({
     alignItems: 'center',
   },
   brandContainer: {
+    
     display: 'flex',
     alignItems: 'center',
   },

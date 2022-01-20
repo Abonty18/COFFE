@@ -1,7 +1,11 @@
 import { makeStyles } from '@material-ui/core/styles';
 
 export default makeStyles((theme) => ({
+  main:{
+    backgroundColor:'#f0eaff',
+  },
   media: {
+    
     borderRadius: '20px',
     objectFit: 'cover',
     width: '100%',
@@ -9,6 +13,7 @@ export default makeStyles((theme) => ({
 
   },
   card: {
+    
     display: 'flex',
     width: '100%',
     [theme.breakpoints.down('sm')]: {
@@ -17,6 +22,7 @@ export default makeStyles((theme) => ({
     },
   },
   section: {
+    
     borderRadius: '20px',
     margin: '10px',
     flex: 1,
@@ -28,12 +34,15 @@ export default makeStyles((theme) => ({
     },
   },
   recommendedPosts: {
+    backgroundColor: '#d0e8ff',
     display: 'flex',
+    borderRadius: '15px',
     [theme.breakpoints.down('sm')]: {
       flexDirection: 'column',
     },
   },
   loadingPaper: {
+    backgroundColor: '#ebe4ff',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
