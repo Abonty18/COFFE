@@ -6,7 +6,8 @@ import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
 import Categories from "../../Data/Categories";
 import "./Home.css";
 
-const Home = ({ name, setName, fetchQuestions }) => {
+const QuizHome = ({ fetchQuestions }) => {
+  
   const [category, setCategory] = useState("");
   const [difficulty, setDifficulty] = useState("");
   const [error, setError] = useState(false);
@@ -14,7 +15,7 @@ const Home = ({ name, setName, fetchQuestions }) => {
   const history = useHistory();
 
   const handleSubmit = () => {
-    if (!category || !difficulty || !name) {
+    if (!category || !difficulty ) {
       setError(true);
       return;
     } else {
@@ -30,12 +31,7 @@ const Home = ({ name, setName, fetchQuestions }) => {
         <span style={{ fontSize: 30 }}>Quiz Settings</span>
         <div className="settings__select">
           {error && <ErrorMessage>Please Fill all the feilds</ErrorMessage>}
-          <TextField
-            style={{ marginBottom: 25 }}
-            label="Enter Your Name"
-            variant="outlined"
-            onChange={(e) => setName(e.target.value)}
-          />
+       
           <TextField
             select
             label="Select Category"
@@ -83,4 +79,4 @@ const Home = ({ name, setName, fetchQuestions }) => {
   );
 };
 
-export default Home;
+export default QuizHome;

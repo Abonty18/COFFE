@@ -4,14 +4,14 @@ import { useEffect } from "react";
 import { useHistory } from "react-router";
 import "./Result.css";
 
-const Result = ({ name, score }) => {
+const Result = ({ score }) => {
   const history = useHistory();
 
-  useEffect(() => {
-    if (!name) {
-      history.push("/");
-    }
-  }, [name, history]);
+  // useEffect(() => {
+  //   if (!name) {
+  //     history.push("/");
+  //   }
+  // }, [history]);
 
   return (
     <div className="result">

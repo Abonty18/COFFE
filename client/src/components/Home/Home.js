@@ -6,6 +6,7 @@ import ChipInput from 'material-ui-chip-input';
 
 import { getPostsBySearch } from '../../actions/posts';
 import Posts from '../Posts/Posts';
+import QuizHome from '../QuizHome/QuizHome'
 import Form from '../Form/Form';
 import Pagination from '../Pagination';
 import useStyles from './styles';

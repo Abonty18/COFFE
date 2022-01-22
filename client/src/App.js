@@ -18,7 +18,7 @@ import Result from "./components/Result/Result";
 const App = () => {
   const user = JSON.parse(localStorage.getItem('profile'));
   const [questions, setQuestions] = useState();
-  const [name, setName] = useState();
+  const [name, setName] = useState("");
   const [score, setScore] = useState(0);
 
   const fetchQuestions = async (category = "", difficulty = "") => {
@@ -40,9 +40,25 @@ const App = () => {
           <Route path="/" exact component={() => <Redirect to="/posts" />} />
           <Route path="/posts" exact component={Home} />
           <Route path="/posts/search" exact component={Home} />
-          <Route path="/QuizHome" exact component={QuizHome} name={name} setName={setName} fetchQuestions={fetchQuestions}/>
-          <Route path="/quiz" exact component={Quiz} name={name} questions={questions} score={score} setScore={setScore} setQuestions={setQuestions}/>
-          <Route path="/result" exact component={Result} name={name} score={score} />
+          <Route path="/QuizHome" exact>
+            <QuizHome
+              name={name}
+              setName={setName}
+              fetchQuestions={fetchQuestions}
+            />
+          </Route>
+          <Route path="/quiz">
+            <Quiz
+              
+              questions={questions}
+              score={score}
+              setScore={setScore}
+              setQuestions={setQuestions}
+            />
+          </Route>
+          <Route path="/result">
+            <Result score={score} />
+          </Route>
           <Route path="/posts/:id" exact component={PostDetails} />
           <Route path={['/creators/:name', '/tags/:name']} component={CreatorOrTag} />
           <Route path="/auth" exact component={() => (!user ? <Auth /> : <Redirect to="/posts" />)} />
