@@ -10,7 +10,13 @@ export const signin = (formData, router) => async (dispatch) => {
     router.push('/');
     
   } catch (error) {
-    console.log(error);
+    console.log("An error occured while ");
+    const errMsg =
+      error.response && error.response.data.message
+        ? error.response.data.message
+        : error.message;
+    dispatch({ type: "ERROR", data: errMsg });
+    console.log(errMsg);
   }
 };
 
@@ -21,7 +27,14 @@ export const signup = (formData, router) => async (dispatch) => {
     dispatch({ type: AUTH, data });
 
     router.push('/');
-  } catch (error) {
-    console.log(error);
+  }catch (error) {
+    console.log("An error occured while ");
+    const errMsg =
+      error.response && error.response.data.message
+        ? error.response.data.message
+        : error.message;
+    dispatch({ type: "ERROR", data: errMsg });
+    console.log(errMsg);
+    
   }
 };

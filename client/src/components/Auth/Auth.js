@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { Avatar, Button, Paper, Grid, Typography, Container } from '@material-ui/core';
+import { useDispatch,useSelector } from 'react-redux';
+import { Button, Paper, Grid, Typography, Container } from '@material-ui/core';
 import { useHistory } from 'react-router-dom';
 import { GoogleLogin } from 'react-google-login';
-
+import Snackbar from "@material-ui/core/Snackbar";
+import { ToastContainer, toast } from 'material-react-toastify';
+import ErrorMessage from "../utils/ErrorMessage";
 
 import Icon from './icon';
 import signinl from '../../images/signin.gif';
@@ -17,10 +19,12 @@ const initialState = { firstName: '', lastName: '', email: '', password: '', con
 const SignUp = () => {
   const [form, setForm] = useState(initialState);
   const [isSignup, setIsSignup] = useState(false);
+  
   const dispatch = useDispatch();
+  const authData = useSelector((state) => state.auth.authData);
   const history = useHistory();
   const classes = useStyles();
-
+  const [error, setError] = useState(null);
   const [showPassword, setShowPassword] = useState(false);
   const handleShowPassword = () => setShowPassword(!showPassword);
 
@@ -28,16 +32,22 @@ const SignUp = () => {
     setForm(initialState);
     setIsSignup((prevIsSignup) => !prevIsSignup);
     setShowPassword(false);
+    
   };
+  const notify = () => toast("Wow so easy !");
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     if (isSignup) {
       dispatch(signup(form, history));
-    } else {
+     
+     
+
+   } else {
       dispatch(signin(form, history));
-    }
+      
+  }
   };
 
   const googleSuccess = async (res) => {
@@ -50,6 +60,8 @@ const SignUp = () => {
       history.push('/');
     } catch (error) {
       console.log(error);
+      
+      
     }
   };
 
@@ -60,10 +72,7 @@ const SignUp = () => {
   return (
     <Container component="main" maxWidth="xs" >
       <Paper className={classes.paper} elevation={6}>
-        {/* <Avatar className={classes.avatar}> */}
         <img className={classes.avatar} src={signinl} alt="icon" height="100px" width='100px' />
-          {/* <LockOutlinedIcon /> */}
-        {/* </Avatar> */}
         <Typography component="h1" variant="h5">{ isSignup ? 'Sign up' : 'Sign in' }</Typography>
         <form className={classes.form} onSubmit={handleSubmit}>
           <Grid container spacing={2}>
@@ -83,7 +92,7 @@ const SignUp = () => {
           <GoogleLogin
             clientId="397871205333-ulghgaggkpho2k11dr1jjb2vg29f1qbi.apps.googleusercontent.com"
             render={(renderProps) => (
-              <Button className={classes.googleButton}  fullWidth onClick={renderProps.onClick} disabled={renderProps.disabled} startIcon={<Icon />} variant="contained">
+              <Button className={classes.googleButton}  fullWidth onClick={renderProps.onClick}  disabled={renderProps.disabled} startIcon={<Icon />} variant="contained">
                 Google Sign In
               </Button>
             )}
@@ -96,6 +105,7 @@ const SignUp = () => {
               <Button className={classes.already} onClick={switchMode}>
                 { isSignup ? 'Already have an account? Sign in' : "Don't have an account? Sign Up" }
               </Button>
+  
             </Grid>
           </Grid>
         </form>

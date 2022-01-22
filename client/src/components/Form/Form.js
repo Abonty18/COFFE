@@ -77,6 +77,7 @@ const Form = ({ currentId, setCurrentId }) => {
         <Button className={classes.buttonSubmit} variant="contained"  size="large" type="submit" fullWidth>Submit</Button>
         <Button className={classes.clear} variant="contained" color="secondary" size="small" onClick={clear} fullWidth>Clear</Button>
       </form>
+      
     </Paper>
   );
 };

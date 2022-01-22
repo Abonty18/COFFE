@@ -1,4 +1,6 @@
 import React from 'react';
+import { useState } from "react";
+import axios from "axios";
 import { Container } from '@material-ui/core';
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 
@@ -7,9 +9,28 @@ import Navbar from './components/Navbar/Navbar';
 import Home from './components/Home/Home';
 import Auth from './components/Auth/Auth';
 import CreatorOrTag from './components/CreatorOrTag/CreatorOrTag';
+import Header from "./components/Header/Header";
+import QuizHome from "./components/QuizHome/QuizHome";
+import Quiz from "./components/Quiz/Quiz";
+import Result from "./components/Result/Result";
+
 
 const App = () => {
   const user = JSON.parse(localStorage.getItem('profile'));
+  const [questions, setQuestions] = useState();
+  const [name, setName] = useState();
+  const [score, setScore] = useState(0);
+
+  const fetchQuestions = async (category = "", difficulty = "") => {
+    const { data } = await axios.get(
+      `https://opentdb.com/api.php?amount=10${
+        category && `&category=${category}`
+      }${difficulty && `&difficulty=${difficulty}`}&type=multiple`
+    );
+
+    setQuestions(data.results);
+  };
+  
 
   return (
     <BrowserRouter>
@@ -19,6 +40,9 @@ const App = () => {
           <Route path="/" exact component={() => <Redirect to="/posts" />} />
           <Route path="/posts" exact component={Home} />
           <Route path="/posts/search" exact component={Home} />
+          <Route path="/QuizHome" exact component={QuizHome} name={name} setName={setName} fetchQuestions={fetchQuestions}/>
+          <Route path="/quiz" exact component={Quiz} name={name} questions={questions} score={score} setScore={setScore} setQuestions={setQuestions}/>
+          <Route path="/result" exact component={Result} name={name} score={score} />
           <Route path="/posts/:id" exact component={PostDetails} />
           <Route path={['/creators/:name', '/tags/:name']} component={CreatorOrTag} />
           <Route path="/auth" exact component={() => (!user ? <Auth /> : <Redirect to="/posts" />)} />

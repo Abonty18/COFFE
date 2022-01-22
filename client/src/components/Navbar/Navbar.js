@@ -5,15 +5,14 @@ import { useDispatch } from 'react-redux';
 import decode from 'jwt-decode';
 
 
-import surf from '../../images/surf.svg';
+
 import nature from '../../images/nature.svg';
-import nature1 from '../../images/nature1.svg';
-import happy from '../../images/happy.svg';
-import fit from '../../images/fit.svg';
+
 import logo1 from '../../images/logo1.svg';
 
 import travel from '../../images/travel.svg';
 import hobbyists from '../../images/hobbyists.png';
+import quiz from '../../images/quiz.png';
 import biking from '../../images/biking.svg';
 import cooking from '../../images/cooking.svg';
 import garden from '../../images/garden.svg';
@@ -75,7 +74,10 @@ const Navbar = () => {
       <img className={classes.image} src={logo3} alt="icon" height="35px" />
 
 
+      <Link to="/QuizHome" className={classes.brandContainer}>
 
+<img component={Link} to="/QuizHome" src={quiz} alt="icon" height="60px" />
+</Link>
       <Toolbar className={classes.toolbar}>
         {user?.result ? (
           <div className={classes.profile}>
