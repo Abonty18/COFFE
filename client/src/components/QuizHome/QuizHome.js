@@ -5,6 +5,7 @@ import { useHistory } from "react-router";
 import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
 import Categories from "../../Data/Categories";
 import "./Home.css";
+import quiz from '../../images/quiz.svg';
 
 const QuizHome = ({ fetchQuestions }) => {
   
@@ -74,7 +75,7 @@ const QuizHome = ({ fetchQuestions }) => {
           </Button>
         </div>
       </div>
-      <img src="/quiz.svg" className="banner" alt="quiz app" />
+      <img src={quiz} className="banner" alt="quiz app" height='550px' width='550px'/>
     </div>
   );
 };
