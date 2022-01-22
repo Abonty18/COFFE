@@ -4,7 +4,24 @@ import { Link, useHistory, useLocation } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import decode from 'jwt-decode';
 
-import memories from '../../images/memories.png';
+
+import surf from '../../images/surf.svg';
+import nature from '../../images/nature.svg';
+import nature1 from '../../images/nature1.svg';
+import happy from '../../images/happy.svg';
+import fit from '../../images/fit.svg';
+import logo1 from '../../images/logo1.svg';
+
+import travel from '../../images/travel.svg';
+import hobbyists from '../../images/hobbyists.png';
+import biking from '../../images/biking.svg';
+import cooking from '../../images/cooking.svg';
+import garden from '../../images/garden.svg';
+import view from '../../images/view.svg';
+import cam from '../../images/cam.svg';
+import creative from '../../images/creative.svg';
+import logo3 from '../../images/logo3.svg';
+
 import * as actionType from '../../constants/actionTypes';
 import useStyles from './styles';
 
@@ -37,10 +54,28 @@ const Navbar = () => {
 
   return (
     <AppBar className={classes.appBar} position="static" color="inherit">
-      <div className={classes.brandContainer}>
-        <Typography component={Link} to="/" className={classes.heading} variant="h2" align="center">Memories</Typography>
-        <img className={classes.image} src={memories} alt="icon" height="60" />
-      </div>
+      <img className={classes.image} src={logo1} alt="icon" height="35px" />
+      <img className={classes.image} src={garden} alt="icon" height="35px" />
+      <img className={classes.image} src={biking} alt="icon" height="35px" />
+      <img className={classes.image} src={cam} alt="icon" height="35px" />
+      <img className={classes.image} src={travel} alt="icon" height="35px" />
+      {/* <img className={classes.image} src={surf} alt="icon" height="40px" /> */}
+
+
+      <Link to="/" className={classes.brandContainer}>
+
+        <img component={Link} to="/" src={hobbyists} alt="icon" height="60px" />
+      </Link>
+      <img className={classes.image} src={cooking} alt="icon" height="35px" />
+      <img className={classes.image} src={nature} alt="icon" height="35px" />
+
+      {/* <img className={classes.image} src={happy} alt="icon" height="40px" /> */}
+      <img className={classes.image} src={view} alt="icon" height="35px" />
+      <img className={classes.image} src={creative} alt="icon" height="35px" />
+      <img className={classes.image} src={logo3} alt="icon" height="35px" />
+
+
+
       <Toolbar className={classes.toolbar}>
         {user?.result ? (
           <div className={classes.profile}>
@@ -49,7 +84,7 @@ const Navbar = () => {
             <Button variant="contained" className={classes.logout} color="secondary" onClick={logout}>Logout</Button>
           </div>
         ) : (
-          <Button component={Link} to="/auth" variant="contained" color="primary">Sign In</Button>
+          <Button className={classes.signin}component={Link} to="/auth" variant="contained" >Sign In</Button>
         )}
       </Toolbar>
     </AppBar>

@@ -1,9 +1,9 @@
 
 body {
-    background-color: #f7f8fc;
+    background-color: #d5c4fd;
 }
 
 * {
-    /* font-family: 'Noto Sans JP' !important; */
-    font-family: 'Heebo', sans-serif !important;
+   
+    font-family: 'Voltaire', sans-serif; 
 }
