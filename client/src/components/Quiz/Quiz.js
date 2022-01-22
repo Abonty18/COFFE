@@ -3,8 +3,9 @@ import { CircularProgress } from "@material-ui/core";
 import { useEffect, useState } from "react";
 import Question from "../../components/Question/Question";
 import "./Quiz.css";
+import quiz from '../../images/quiz.svg';
 
-const Quiz = ({ name, questions, score, setScore, setQuestions }) => {
+const Quiz = ({  questions, score, setScore, setQuestions }) => {
   const [options, setOptions] = useState();
   const [currQues, setCurrQues] = useState(0);
 
@@ -26,7 +27,8 @@ const Quiz = ({ name, questions, score, setScore, setQuestions }) => {
 
   return (
     <div className="quiz">
-      <span className="subtitle">Welcome, {name}</span>
+   
+      <span className="subtitle">Welcome to Hobbyists Quiz!</span>
 
       {questions ? (
         <div>

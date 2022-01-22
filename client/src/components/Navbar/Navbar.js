@@ -53,11 +53,11 @@ const Navbar = () => {
 
   return (
     <AppBar className={classes.appBar} position="static" color="inherit">
-      <img className={classes.image} src={logo1} alt="icon" height="35px" />
+      {/* <img className={classes.image} src={logo1} alt="icon" height="35px" />
       <img className={classes.image} src={garden} alt="icon" height="35px" />
       <img className={classes.image} src={biking} alt="icon" height="35px" />
       <img className={classes.image} src={cam} alt="icon" height="35px" />
-      <img className={classes.image} src={travel} alt="icon" height="35px" />
+      <img className={classes.image} src={travel} alt="icon" height="35px" /> */}
       {/* <img className={classes.image} src={surf} alt="icon" height="40px" /> */}
 
 
@@ -65,13 +65,13 @@ const Navbar = () => {
 
         <img component={Link} to="/" src={hobbyists} alt="icon" height="60px" />
       </Link>
-      <img className={classes.image} src={cooking} alt="icon" height="35px" />
-      <img className={classes.image} src={nature} alt="icon" height="35px" />
+      {/* <img className={classes.image} src={cooking} alt="icon" height="35px" />
+      <img className={classes.image} src={nature} alt="icon" height="35px" /> */}
 
       {/* <img className={classes.image} src={happy} alt="icon" height="40px" /> */}
-      <img className={classes.image} src={view} alt="icon" height="35px" />
+      {/* <img className={classes.image} src={view} alt="icon" height="35px" />
       <img className={classes.image} src={creative} alt="icon" height="35px" />
-      <img className={classes.image} src={logo3} alt="icon" height="35px" />
+      <img className={classes.image} src={logo3} alt="icon" height="35px" /> */}
 
 
       <Link to="/QuizHome" className={classes.brandContainer}>

@@ -9,10 +9,10 @@ export default makeStyles((theme) => ({
     padding: '16px',
   },
   searchButton: {
-    backgroundColor:'#c27ba0',
+    backgroundColor:'#8e7cc3',
     color: '#ffffff',
     '&:hover': {
-      backgroundColor: '#a64d79',
+      backgroundColor: '#674ea7',
       },
     borderRadius: '20px',
     // marginBottom: '1rem',

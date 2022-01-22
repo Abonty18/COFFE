@@ -41,7 +41,12 @@ export default makeStyles((theme) => ({
   clear: {
     marginBottom: 10,
     borderRadius:'20px',
-    padding:'8px'
+    padding:'8px',
+    backgroundColor:'#fc727e',
+
+    '&:hover': {
+      backgroundColor: '#e95460',
+      },
     
 
   },

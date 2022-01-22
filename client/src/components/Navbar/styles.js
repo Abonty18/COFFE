@@ -11,7 +11,7 @@ export default makeStyles((theme) => ({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    padding: '9px 50px',
+    padding: '8px 50px',
     [theme.breakpoints.down('sm')]: {
       flexDirection: 'column',
     },
@@ -47,7 +47,16 @@ export default makeStyles((theme) => ({
   },
   logout: {
     marginLeft: '20px',
-    borderRadius:'20px'
+    borderRadius:'20px',
+    backgroundColor:'#fc727e',
+
+    '&:hover': {
+      backgroundColor: '#e95460',
+      },
+
+
+
+
   },
   signin: {
     backgroundColor:'#6a329f',
