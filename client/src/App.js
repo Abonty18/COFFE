@@ -40,7 +40,7 @@ const App = () => {
           <Route path="/" exact component={() => <Redirect to="/posts" />} />
           <Route path="/posts" exact component={Home} />
           <Route path="/posts/search" exact component={Home} />
-          <Route path="/QuizHome" exact>
+          <Route path="/QuizHome" > 
             <QuizHome
               name={name}
               setName={setName}

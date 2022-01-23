@@ -8,12 +8,13 @@
 .subtitle {
   font-size: 25px;
   border: 3px solid rgb(123, 98, 155);
-  box-shadow: 4px 4px 2px rgb(58, 2, 104);
+  box-shadow: 4px 4px 2px rgb(68, 16, 110);
   padding: 5px 10px;
-  color: rgb(64, 24, 117);
+  color: rgb(110, 73, 158);
   font-weight: bolder;
   border-radius: 25px;
   margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .quizInfo {
@@ -22,7 +23,7 @@
   justify-content: space-between;
   text-transform: uppercase;
   margin: 10px;
-  color: rgb(64, 24, 117);
+  color: rgb(96, 49, 158);
   font-weight: bolder;
   margin-top: 10px;
 }
