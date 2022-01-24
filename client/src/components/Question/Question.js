@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useHistory } from "react-router";
 import "./Question.css";
 import ErrorMessage from "../ErrorMessage/ErrorMessage";
+import question from '../../images/question.svg';
 
 const Question = ({
   currQues,
@@ -47,6 +48,7 @@ const Question = ({
   };
 
   return (
+    <div className='content'>
     <div className="question">
       <h1>Question {currQues + 1} :</h1>
 
@@ -71,7 +73,7 @@ const Question = ({
             variant="contained"
             color="secondary"
             size="large"
-            style={{ width: 185 }}
+            style={{ width: 185 , alignSelf: "center",borderRadius:'25px', height:'6vh'  }}
             href="/"
             onClick={() => handleQuit()}
           >
@@ -81,13 +83,15 @@ const Question = ({
             variant="contained"
             color="primary"
             size="large"
-            style={{ width: 185 }}
+            style={{ width: 185 , alignSelf: "center",borderRadius:'25px', height:'6vh'  }}
             onClick={handleNext}
           >
             {currQues > 20 ? "Submit" : "Next Question"}
           </Button>
         </div>
       </div>
+    </div>
+    <img src={question} className="questionimg" alt="quiz app" height='450px' width='450px'/>
     </div>
   );
 };

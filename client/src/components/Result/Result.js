@@ -3,6 +3,8 @@ import { Button } from "@material-ui/core";
 import { useEffect } from "react";
 import { useHistory } from "react-router";
 import "./Result.css";
+import result from '../../images/result.svg';
+import result2 from '../../images/result2.svg';
 
 const Result = ({ score }) => {
   const history = useHistory();
@@ -14,18 +16,23 @@ const Result = ({ score }) => {
   // }, [history]);
 
   return (
+    <>
     <div className="result">
       <span className="title">Final Score : {score}</span>
-      <Button
+      <Button className='btn'
         variant="contained"
         color="secondary"
+        
         size="large"
-        style={{ alignSelf: "center", marginTop: 20 }}
+        style={{ alignSelf: "center", marginTop: 20,borderRadius:'25px', height:'6vh'   }}
         href="/"
       >
         Go to homepage
       </Button>
     </div>
+    {/* <img src={result} className="resultimg" alt="quiz app" /> */}
+    <span className="resultimg"><img src={result2}  alt="quiz app" height='370px' /></span>
+    </>
   );
 };
 

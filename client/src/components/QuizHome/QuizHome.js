@@ -39,7 +39,7 @@ const QuizHome = ({ fetchQuestions }) => {
             value={category}
             onChange={(e) => setCategory(e.target.value)}
             variant="outlined"
-            style={{ marginBottom: 30 }}
+            style={{ marginBottom: 10 }}
           >
             {Categories.map((cat) => (
               <MenuItem key={cat.category} value={cat.value}>
@@ -53,7 +53,7 @@ const QuizHome = ({ fetchQuestions }) => {
             value={difficulty}
             onChange={(e) => setDifficulty(e.target.value)}
             variant="outlined"
-            style={{ marginBottom: 30 }}
+            style={{ marginBottom: 10}}
           >
             <MenuItem key="Easy" value="easy">
               Easy
@@ -69,6 +69,7 @@ const QuizHome = ({ fetchQuestions }) => {
             variant="contained"
             color="primary"
             size="large"
+            style={{ width: 185 ,alignSelf: "center", marginTop: 10,borderRadius:'25px', height:'8vh'  }}
             onClick={handleSubmit}
           >
             Start Quiz

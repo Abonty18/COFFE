@@ -3,23 +3,25 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: rgb(131, 58, 173);
+  color: rgb(90, 40, 119);
+  font-family: 'Pangolin', cursive;
+  font-weight: bold;
 }
 
 .singleQuestion {
   width: 95%;
-  min-height: 350px;
+  min-height: 300px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
   border: 3px solid rgb(148, 113, 172);
   box-shadow: 4px 4px 8px rgb(58, 2, 104);
-  color: rgb(95, 56, 128);
+  color: rgb(73, 34, 107);
   padding: 20px;
   margin-top: 10px;
   border-radius: 25px;
-  background: rgb(212, 189, 255);
+  background: rgb(209, 188, 255);
   
 }
 
@@ -35,16 +37,17 @@
 
 .singleOption {
   width: 46%;
-  height: 50px;
+  height: 55px;
   padding: 15px 20px;
   margin: 10px;
-  border: 3px solid rgb(148, 113, 172);
+  border: 3px solid rgb(198, 148, 255);
   box-shadow: 4px 4px 8px rgb(58, 2, 104);
   border-radius: 25px;
   font-size: 18px;
   align-items: center;
   color: rgb(63, 35, 116);
-  background-color: rgb(237, 221, 255);
+  
+  font-family: 'Pangolin', cursive;
 }
 
 @media (max-width: 614px) {
@@ -60,13 +63,16 @@
 }
 
 .select {
-  background-color: rgb(57, 185, 132);
+  background-color: rgb(4, 216, 152);
   color: white;
   box-shadow: 0 0 1px black;
 }
 
 .wrong {
-  background-color: rgb(236, 102, 102);
+  background-color: rgb(248, 86, 126);
   color: white;
   box-shadow: 0 0 1px black;
+}
+.questionimg{
+  margin-left: 100px;
 }

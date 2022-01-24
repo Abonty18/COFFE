@@ -1,6 +1,8 @@
 .content {
   display: flex;
   justify-content: space-around;
+  
+  border-radius: 30px;
 }
 
 .settings {
@@ -9,10 +11,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-family: "Poppins", sans-serif;
-  font-weight: 300;
-  color: rgb(110, 73, 158);
+  font-family: 'Bubblegum Sans', cursive;
+  
+  color: rgb(72, 56, 163);
   font-weight: bolder;
+  font-size: 100px;
   
 }
 
@@ -26,6 +29,7 @@
   .content {
     flex-direction: column-reverse;
     align-items: center;
+    
   }
   .banner {
     width: 85%;
@@ -38,10 +42,12 @@
 }
 
 .settings__select {
+ 
   display: flex;
   flex-direction: column;
   padding: 20px;
   width: 100%;
   flex: 0.8;
   justify-content: space-evenly;
+  font-weight: bolder;
 }

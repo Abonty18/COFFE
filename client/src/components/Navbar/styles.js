@@ -5,13 +5,14 @@ export default makeStyles((theme) => ({
   appBar: {
     backgroundColor:'#f2ecff',
 
-    borderRadius: 15,
-    margin: '15px 0',
+    borderRadius: '20px',
+   
+    margin: '20px 0',
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    padding: '8px 50px',
+    padding: '9px 50px',
     [theme.breakpoints.down('sm')]: {
       flexDirection: 'column',
     },
@@ -67,6 +68,17 @@ export default makeStyles((theme) => ({
     
     borderRadius:'20px'
   },
+  hobbyists:{
+
+    alignItems:'center',
+
+  },
+
+  quiz:{
+
+   alignItems:'center',
+    
+      },
   userName: {
     display: 'flex',
     alignItems: 'center',

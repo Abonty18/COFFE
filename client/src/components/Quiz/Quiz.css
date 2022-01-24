@@ -2,7 +2,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Englebert', sans-serif;
+
 }
 
 .subtitle {
@@ -10,11 +11,12 @@
   border: 3px solid rgb(123, 98, 155);
   box-shadow: 4px 4px 2px rgb(68, 16, 110);
   padding: 5px 10px;
-  color: rgb(110, 73, 158);
+  color: rgb(71, 31, 145);
   font-weight: bolder;
   border-radius: 25px;
   margin-top: 10px;
   margin-bottom: 10px;
+  background: rgb(209, 188, 255);
 }
 
 .quizInfo {
@@ -26,4 +28,6 @@
   color: rgb(96, 49, 158);
   font-weight: bolder;
   margin-top: 10px;
+  font-size: 20px;
+  
 }

@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Question from "../../components/Question/Question";
 import "./Quiz.css";
 import quiz from '../../images/quiz.svg';
+import question from '../../images/question.svg';
 
 const Quiz = ({  questions, score, setScore, setQuestions }) => {
   const [options, setOptions] = useState();

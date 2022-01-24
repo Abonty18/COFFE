@@ -30,6 +30,12 @@ const Navbar = () => {
   const location = useLocation();
   const history = useHistory();
   const classes = useStyles();
+  const [toggleMenu, setToggleMenu] = useState(false)
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth)
+
+  const toggleNav = () => {
+    setToggleMenu(!toggleMenu)
+  }
 
   const logout = () => {
     dispatch({ type: actionType.LOGOUT });
@@ -38,6 +44,8 @@ const Navbar = () => {
 
     setUser(null);
   };
+
+
 
   useEffect(() => {
     const token = user?.token;
@@ -53,31 +61,17 @@ const Navbar = () => {
 
   return (
     <AppBar className={classes.appBar} position="static" color="inherit">
-      {/* <img className={classes.image} src={logo1} alt="icon" height="35px" />
-      <img className={classes.image} src={garden} alt="icon" height="35px" />
-      <img className={classes.image} src={biking} alt="icon" height="35px" />
-      <img className={classes.image} src={cam} alt="icon" height="35px" />
-      <img className={classes.image} src={travel} alt="icon" height="35px" /> */}
-      {/* <img className={classes.image} src={surf} alt="icon" height="40px" /> */}
+
 
 
       <Link to="/" className={classes.brandContainer}>
-
-        <img component={Link} to="/" src={hobbyists} alt="icon" height="60px" />
+        <img className={classes.hobbyists} component={Link} to="/" src={hobbyists} alt="icon" height="60px" />
       </Link>
-      {/* <img className={classes.image} src={cooking} alt="icon" height="35px" />
-      <img className={classes.image} src={nature} alt="icon" height="35px" /> */}
-
-      {/* <img className={classes.image} src={happy} alt="icon" height="40px" /> */}
-      {/* <img className={classes.image} src={view} alt="icon" height="35px" />
-      <img className={classes.image} src={creative} alt="icon" height="35px" />
-      <img className={classes.image} src={logo3} alt="icon" height="35px" /> */}
-
 
       <Link to="/QuizHome" className={classes.brandContainer}>
+        <img className={classes.quiz} component={Link} to="/QuizHome" src={quiz} alt="icon" height="60px" />
+      </Link>
 
-<img component={Link} to="/QuizHome" src={quiz} alt="icon" height="60px" />
-</Link>
       <Toolbar className={classes.toolbar}>
         {user?.result ? (
           <div className={classes.profile}>
@@ -86,7 +80,7 @@ const Navbar = () => {
             <Button variant="contained" className={classes.logout} color="secondary" onClick={logout}>Logout</Button>
           </div>
         ) : (
-          <Button className={classes.signin}component={Link} to="/auth" variant="contained" >Sign In</Button>
+          <Button className={classes.signin} component={Link} to="/auth" variant="contained" >Sign In</Button>
         )}
       </Toolbar>
     </AppBar>
