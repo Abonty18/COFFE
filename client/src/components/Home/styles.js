@@ -14,10 +14,10 @@ export default makeStyles((theme) => ({
   },
   
   searchButton: {
-    backgroundColor:'#a85fef',
+    backgroundColor:'#8855cf',
     color: '#ffffff',
     '&:hover': {
-      backgroundColor: '#872ae2',
+      backgroundColor: '#644294',
       },
     borderRadius: '20px',
     // marginBottom: '1rem',

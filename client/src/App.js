@@ -13,6 +13,7 @@ import Header from "./components/Header/Header";
 import QuizHome from "./components/QuizHome/QuizHome";
 import Quiz from "./components/Quiz/Quiz";
 import Result from "./components/Result/Result";
+import PrivateRoute from './PrivateRoute'
 
 
 const App = () => {
@@ -20,6 +21,7 @@ const App = () => {
   const [questions, setQuestions] = useState();
   const [name, setName] = useState("");
   const [score, setScore] = useState(0);
+  
 
   const fetchQuestions = async (category = "", difficulty = "") => {
     const { data } = await axios.get(
@@ -59,6 +61,7 @@ const App = () => {
           <Route path="/result">
             <Result score={score} />
           </Route>
+          
           <Route path="/posts/:id" exact component={PostDetails} />
           <Route path={['/creators/:name', '/tags/:name']} component={CreatorOrTag} />
           <Route path="/auth" exact component={() => (!user ? <Auth /> : <Redirect to="/posts" />)} />

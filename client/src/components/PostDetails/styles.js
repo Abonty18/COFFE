@@ -53,6 +53,7 @@ export default makeStyles((theme) => ({
   commentsOuterContainer: {
     display: 'flex',
     justifyContent: 'space-between',
+    width:'50vh'
   },
   commentsInnerContainer: {
     height: '200px',

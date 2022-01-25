@@ -25,7 +25,7 @@ export default makeStyles((theme) => ({
     width: '97%',
     margin: '4px',
     marginLeft:'7px',
-    marginBottom:'4px'
+    marginBottom:'6px'
     
   },
   buttonSubmit: {
@@ -41,7 +41,7 @@ export default makeStyles((theme) => ({
   clear: {
     marginBottom: 10,
     borderRadius:'20px',
-    padding:'8px',
+    padding:'7px',
     backgroundColor:'#fc727e',
 
     '&:hover': {

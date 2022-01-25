@@ -1,5 +1,5 @@
 import React from 'react';
-import { CircularProgress } from "@material-ui/core";
+import { CircularProgress , createMuiTheme, ThemeProvider} from "@material-ui/core";
 import { useEffect, useState } from "react";
 import Question from "../../components/Question/Question";
 import "./Quiz.css";
@@ -9,6 +9,16 @@ import question from '../../images/question.svg';
 const Quiz = ({  questions, score, setScore, setQuestions }) => {
   const [options, setOptions] = useState();
   const [currQues, setCurrQues] = useState(0);
+  const theme=createMuiTheme({
+  
+    typography:{
+     fontFamily: [
+     'Acme',
+     'sans-serif'
+     ].join(','),
+    }
+ 
+  });
 
   useEffect(() => {
     setOptions(
@@ -27,6 +37,7 @@ const Quiz = ({  questions, score, setScore, setQuestions }) => {
   };
 
   return (
+    <ThemeProvider theme={theme}>
     <div className="quiz">
    
       <span className="subtitle">Welcome to Hobbyists Quiz!</span>
@@ -60,6 +71,7 @@ const Quiz = ({  questions, score, setScore, setQuestions }) => {
         />
       )}
     </div>
+    </ThemeProvider>
   );
 };
 

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { AppBar, Typography, Toolbar, Avatar, Button } from '@material-ui/core';
+import { AppBar, Typography, Toolbar, Avatar, Button ,createMuiTheme, ThemeProvider  } from '@material-ui/core';
 import { Link, useHistory, useLocation } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import decode from 'jwt-decode';
@@ -33,6 +33,17 @@ const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false)
   const [screenWidth, setScreenWidth] = useState(window.innerWidth)
 
+  const theme=createMuiTheme({
+  
+    typography:{
+     fontFamily: [
+     'Acme',
+     'sans-serif'
+     ].join(','),
+    }
+ 
+  });
+
   const toggleNav = () => {
     setToggleMenu(!toggleMenu)
   }
@@ -60,6 +71,7 @@ const Navbar = () => {
   }, [location]);
 
   return (
+    <ThemeProvider theme={theme}>
     <AppBar className={classes.appBar} position="static" color="inherit">
 
 
@@ -84,6 +96,7 @@ const Navbar = () => {
         )}
       </Toolbar>
     </AppBar>
+       </ThemeProvider>
   );
 };
 

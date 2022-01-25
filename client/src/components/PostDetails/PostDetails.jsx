@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
-import { Paper, Typography, CircularProgress, Divider } from '@material-ui/core/';
+import { Paper, Typography, CircularProgress, Divider, createMuiTheme, ThemeProvider } from '@material-ui/core/';
 import { useDispatch, useSelector } from 'react-redux';
 import moment from 'moment';
-import { useParams, useHistory, Link } from 'react-router-dom';
+import { Redirect,useParams, useHistory, Link } from 'react-router-dom';
 
 import { getPost, getPostsBySearch } from '../../actions/posts';
 import CommentSection from './CommentSection';
@@ -14,6 +14,16 @@ const Post = () => {
   const history = useHistory();
   const classes = useStyles();
   const { id } = useParams();
+  const user = JSON.parse(localStorage.getItem('profile'));
+  const theme=createMuiTheme({
+    typography:{
+     fontFamily: [
+     'Ubuntu Condensed',
+     'sans-serif'
+     ].join(','),
+    }
+ 
+  });
 
   useEffect(() => {
     dispatch(getPost(id));
@@ -26,6 +36,9 @@ const Post = () => {
   }, [post]);
 
   if (!post) return null;
+  if (!user) {
+    return <Redirect to="/auth" />
+  }
 
   const openPost = (_id) => history.push(`/posts/${_id}`);
 
@@ -40,6 +53,7 @@ const Post = () => {
   const recommendedPosts = posts.filter(({ _id }) => _id !== post._id);
 
   return (
+    <ThemeProvider theme={theme}>
     <Paper className={classes.main} style={{ padding: '20px', borderRadius: '15px' }} elevation={6}>
       <div className={classes.card}>
         <div className={classes.section}>
@@ -86,6 +100,7 @@ const Post = () => {
         </div>
       )}
     </Paper>
+    </ThemeProvider>
   );
 };
 

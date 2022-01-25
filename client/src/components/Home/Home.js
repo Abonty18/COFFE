@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Container, Grow, Grid, AppBar, TextField, Button, Paper } from '@material-ui/core';
+import { Container, Grow, Grid, AppBar, TextField, Button, Paper, createMuiTheme, ThemeProvider } from '@material-ui/core';
 import { useDispatch } from 'react-redux';
 import { useHistory, useLocation } from 'react-router-dom';
 import ChipInput from 'material-ui-chip-input';
@@ -26,7 +26,16 @@ const Home = () => {
   const [search, setSearch] = useState('');
   const [tags, setTags] = useState([]);
   const history = useHistory();
+ const theme=createMuiTheme({
+  
+   typography:{
+    fontFamily: [
+    'Acme',
+    'sans-serif'
+    ].join(','),
+   }
 
+ });
   const searchPost = () => {
     if (search.trim() || tags) {
       dispatch(getPostsBySearch({ search, tags: tags.join(',') }));
@@ -47,7 +56,7 @@ const Home = () => {
   const handleDeleteChip = (chipToDelete) => setTags(tags.filter((tag) => tag !== chipToDelete));
 
   return (
-   
+   <ThemeProvider theme={theme}>
     <Grow in  >
       <Container maxWidth="xl">
         <Grid container justify="space-between" alignItems="stretch" spacing={3} className={classes.gridContainer}>
@@ -78,6 +87,7 @@ const Home = () => {
         </Grid>
       </Container>
     </Grow>
+    </ThemeProvider>
     
   );
 };

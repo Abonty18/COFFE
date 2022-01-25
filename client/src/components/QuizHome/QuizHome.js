@@ -1,7 +1,7 @@
 import React from 'react';
-import { Button, MenuItem, TextField } from "@material-ui/core";
+import { Button, MenuItem, TextField,createMuiTheme, ThemeProvider } from "@material-ui/core";
 import { useState } from "react";
-import { useHistory } from "react-router";
+import { Redirect,useParams, useHistory, Link } from 'react-router-dom';
 import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
 import Categories from "../../Data/Categories";
 import "./Home.css";
@@ -13,8 +13,21 @@ const QuizHome = ({ fetchQuestions }) => {
   const [difficulty, setDifficulty] = useState("");
   const [error, setError] = useState(false);
 
+  const theme=createMuiTheme({
+  
+    typography:{
+     fontFamily: [
+     'Acme',
+     'sans-serif'
+     ].join(','),
+    }
+ 
+  });
   const history = useHistory();
-
+  const user = JSON.parse(localStorage.getItem('profile'));
+  if (!user) {
+    return <Redirect to="/auth" />
+  }
   const handleSubmit = () => {
     if (!category || !difficulty ) {
       setError(true);
@@ -24,9 +37,12 @@ const QuizHome = ({ fetchQuestions }) => {
       fetchQuestions(category, difficulty);
       history.push("/quiz");
     }
+
+   
   };
 
   return (
+    <ThemeProvider theme={theme}>
     <div className="content">
       <div className="settings">
         <span style={{ fontSize: 30 }}>Quiz Settings</span>
@@ -78,6 +94,7 @@ const QuizHome = ({ fetchQuestions }) => {
       </div>
       <img src={quiz} className="banner" alt="quiz app" height='550px' width='550px'/>
     </div>
+    </ThemeProvider>
   );
 };
 

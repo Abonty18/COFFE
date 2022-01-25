@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { useDispatch,useSelector } from 'react-redux';
-import { Button, Paper, Grid, Typography, Container } from '@material-ui/core';
+import { Button, Paper, Grid, Typography, Container, createMuiTheme, ThemeProvider } from '@material-ui/core';
 import { useHistory } from 'react-router-dom';
 import { GoogleLogin } from 'react-google-login';
 import Snackbar from "@material-ui/core/Snackbar";
 import { ToastContainer, toast } from 'material-react-toastify';
-import ErrorMessage from "../utils/ErrorMessage";
+
 
 import Icon from './icon';
 import signinl from '../../images/signin.gif';
@@ -28,13 +28,14 @@ const SignUp = () => {
   const [showPassword, setShowPassword] = useState(false);
   const handleShowPassword = () => setShowPassword(!showPassword);
 
+
   const switchMode = () => {
     setForm(initialState);
     setIsSignup((prevIsSignup) => !prevIsSignup);
     setShowPassword(false);
     
   };
-  const notify = () => toast("Wow so easy !");
+  
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -64,12 +65,22 @@ const SignUp = () => {
       
     }
   };
+  const theme=createMuiTheme({
+    typography:{
+     fontFamily: [
+     'Acme',
+     'sans-serif'
+     ].join(','),
+    }
+ 
+  });
 
   const googleError = () => console.log('Google Sign In was unsuccessful. Try again later');
 
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
 
   return (
+    <ThemeProvider theme={theme}>
     <Container component="main" maxWidth="xs" >
       <Paper className={classes.paper} elevation={6}>
         <img className={classes.avatar} src={signinl} alt="icon" height="100px" width='100px' />
@@ -111,6 +122,7 @@ const SignUp = () => {
         </form>
       </Paper>
     </Container>
+    </ThemeProvider>
   );
 };
 
