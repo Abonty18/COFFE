@@ -71,15 +71,31 @@ export default makeStyles((theme) => ({
   hobbyists:{
 
     alignItems:'center',
-    
+    fontWeight:'bolder',
+    fontSize:'30px',
+    color:'#4e2674',
+    fontFamily:'Englebert', 
 
   },
 
   quiz:{
 
    alignItems:'center',
-    
+   fontWeight:'bolder',
+    fontSize:'30px',
+    color:'#4e2674',
+    fontFamily:'Englebert', 
       },
+      resources:{
+
+        alignItems:'center',
+        fontWeight:'bolder',
+         fontSize:'30px',
+         color:'#4e2674',
+         fontFamily:'Englebert', 
+         
+           },
+
   userName: {
     display: 'flex',
     alignItems: 'center',

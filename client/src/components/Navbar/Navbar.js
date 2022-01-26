@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux';
 import decode from 'jwt-decode';
 
 
+
 import hobbyists from '../../images/hobbyists.png';
 import quiz from '../../images/quiz.png';
 import videos from '../../images/videos.png';
@@ -71,12 +72,12 @@ const Navbar = () => {
 
       <Link to="/QuizHome" className={classes.brandContainer}>
         {/* <img className={classes.quiz} component={Link} to="/QuizHome" src={quiz} alt="icon" height="40px" /> */}
-        <h2>QuizTime</h2>
+        <h2 className={classes.quiz}>QuizTime</h2>
       </Link>
 
       <Link to="/Dashboard" className={classes.brandContainer}>
         {/* <img  component={Link} to="/Dashboard" src={vidres} alt="icon" height="40px" /> */}
-        <h6>Resources</h6>
+        <h6 className={classes.resources}>Resources</h6>
       </Link>
 
       <Toolbar className={classes.toolbar}>

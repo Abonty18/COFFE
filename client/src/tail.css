@@ -18,7 +18,7 @@ main {
 
 
 h1 {
-  font-size: 2em;
+  font-size: 4em;
   margin: 0.67em 0;
 }
 
@@ -330,12 +330,12 @@ p,
 pre {
   margin: 0;
 }
-
+/* 
 button {
   background-color: transparent;
   background-image: none;
   padding: 0;
-}
+} */
 
 /**
  * Work around a Firefox/IE bug where the transparent `button` background

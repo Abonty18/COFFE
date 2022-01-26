@@ -1,37 +1,37 @@
 const dashboard = [
   {
     id: 1,
-    name: 'React JS',
-    link: 'https://reactjs.org/',
-    cover: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1280px-React-icon.svg.png',
+    name: 'Travelling',
+    link: 'https://www.thetravelmagazine.net/articles',
+    cover: 'https://media.istockphoto.com/photos/young-man-arms-outstretched-by-the-sea-at-sunrise-enjoying-freedom-picture-id1285301614?s=2048x2048',
   },
   {
     id: 2,
-    name: 'Express JS',
-    link: 'https://expressjs.com/',
-    cover: 'https://img.favpng.com/7/9/3/node-js-javascript-react-logo-express-js-png-favpng-GPD0rKMbRdWaq3cyiE1t3dSbw.jpg',
+    name: 'Gardening',
+    link: 'https://www.growingagreenerworld.com/gardening-tips/',
+    cover: 'https://cdn.pixabay.com/photo/2015/02/13/00/50/flower-garden-634578_960_720.jpg',
   },
   {
     id: 3,
-    name: 'Kubernetes',
-    link: 'https://kubernetes.io/',
-    cover: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Kubernetes_logo_without_workmark.svg/1200px-Kubernetes_logo_without_workmark.svg.png',
+    name: 'Arts and Crafts',
+    link: 'https://www.resurgence.org/magazine/article3216-the-power-of-arts-and-crafts.html',
+    cover: 'https://media.istockphoto.com/photos/art-equipment-picture-id538478165?s=2048x2048',
   },
   {
     id: 4,
-    name: 'Introduction to react JS',
-    webPreviewUrl: 'https://www.youtube.com/watch?v=dpw9EHDh2bM&feature=emb_title',
+    name: 'Happy Gardening',
+    webPreviewUrl: 'https://www.youtube.com/watch?v=abpiG8ppxCU&list=PLvE-WOB38X7Z8mAiNYyqcldMQQZCnz5o7',
   },
   {
     id: 5,
-    name: 'Introduction to express JS',
-    webPreviewUrl: 'https://www.youtube.com/watch?v=L72fhGm1tfE',
+    name: 'Enjoy your journey',
+    webPreviewUrl: 'https://www.youtube.com/watch?v=k05M0HQ5pPU&list=PLUSbvZMbeWFpCGPjAvWOExfpL9Cw3vFG0',
   },
 
   {
     id: 6,
-    name: 'Introduction to Kubernetes',
-    webPreviewUrl: 'https://www.youtube.com/watch?v=PH-2FfFD2PU',
+    name: 'Arts and crafts',
+    webPreviewUrl: 'https://www.youtube.com/watch?v=jnTL4c9fgeM&list=PLkc5kS6oh1_nv5ziCiR_wPcrNOy9r4VsE',
   },
 ];
 module.exports = dashboard;

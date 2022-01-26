@@ -1,21 +1,21 @@
 const infrastructure = [
   {
     id: 1,
-    name: 'Express JS',
-    link: 'https://expressjs.com/',
-    cover: 'https://img.favpng.com/7/9/3/node-js-javascript-react-logo-express-js-png-favpng-GPD0rKMbRdWaq3cyiE1t3dSbw.jpg',
+    name: 'Gardening',
+    link: 'https://www.growingagreenerworld.com/gardening-tips/',
+    cover: 'https://cdn.pixabay.com/photo/2015/02/13/00/50/flower-garden-634578_960_720.jpg',
   },
   {
     id: 2,
-    name: 'django',
-    link: 'https://www.djangoproject.com/',
-    cover: 'https://www.djangoproject.com/m/img/logos/django-logo-negative.png',
+    name: 'Travelling',
+    link: 'https://www.thetravelmagazine.net/articles',
+    cover: 'https://media.istockphoto.com/photos/young-man-arms-outstretched-by-the-sea-at-sunrise-enjoying-freedom-picture-id1285301614?s=2048x2048',
   },
   {
     id: 3,
-    name: 'laravel',
-    link: 'https://laravel.com/',
-    cover: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRl0_8XuaHDMKBtPafMH6tTlj0WZMdSUMqiWHmTD1mlLQkHqBOu&usqp=CAU',
+    name: 'Arts and Crafts',
+    link: 'https://www.resurgence.org/magazine/article3216-the-power-of-arts-and-crafts.html',
+    cover: 'https://media.istockphoto.com/photos/art-equipment-picture-id538478165?s=2048x2048',
   },
 ];
 

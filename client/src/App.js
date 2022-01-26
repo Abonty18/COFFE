@@ -22,7 +22,7 @@ import FrontendResource from './components/front-resource';
 import BackendResource from './components/back-resource';
 import Infrastructure from './components/infrastructure';
 import InfrastructureVideo from './components/infrastructure-video';
-import FrontendVideo from './components/front-video';
+
 import BackendVideo from './components/back-video';
 
 
@@ -83,7 +83,7 @@ const App = () => {
       <Route  path="/backend-resource" ><BackendResource /></Route>
       <Route  path="/infrastructure-resource" ><Infrastructure/></Route>
       <Route path="/infrastructure-video"><InfrastructureVideo/></Route>
-      <Route  path="/frontend-video" ><FrontendVideo/></Route>
+     
       <Route  path="/backend-video" ><BackendVideo/></Route>
           <Route path="/auth" exact component={() => (!user ? <Auth /> : <Redirect to="/posts" />)} />
         </Switch>
