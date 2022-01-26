@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactPlayer from "react-player";
 import { useState } from "react";
 import axios from "axios";
 import { Container } from '@material-ui/core';
@@ -15,12 +16,24 @@ import Quiz from "./components/Quiz/Quiz";
 import Result from "./components/Result/Result";
 import PrivateRoute from './PrivateRoute'
 
+import Header1 from './components/common/Header';
+import Dashboard from './components/dashboard';
+import FrontendResource from './components/front-resource';
+import BackendResource from './components/back-resource';
+import Infrastructure from './components/infrastructure';
+import InfrastructureVideo from './components/infrastructure-video';
+import FrontendVideo from './components/front-video';
+import BackendVideo from './components/back-video';
+
+
 
 const App = () => {
   const user = JSON.parse(localStorage.getItem('profile'));
   const [questions, setQuestions] = useState();
   const [name, setName] = useState("");
   const [score, setScore] = useState(0);
+
+  
   
 
   const fetchQuestions = async (category = "", difficulty = "") => {
@@ -64,10 +77,19 @@ const App = () => {
           
           <Route path="/posts/:id" exact component={PostDetails} />
           <Route path={['/creators/:name', '/tags/:name']} component={CreatorOrTag} />
+          <Route path="/Dashboard"><Dashboard /></Route>
+
+      <Route  path="/frontend-resource" ><FrontendResource /></Route>
+      <Route  path="/backend-resource" ><BackendResource /></Route>
+      <Route  path="/infrastructure-resource" ><Infrastructure/></Route>
+      <Route path="/infrastructure-video"><InfrastructureVideo/></Route>
+      <Route  path="/frontend-video" ><FrontendVideo/></Route>
+      <Route  path="/backend-video" ><BackendVideo/></Route>
           <Route path="/auth" exact component={() => (!user ? <Auth /> : <Redirect to="/posts" />)} />
         </Switch>
       </Container>
     </BrowserRouter>
+    
   );
 };
 

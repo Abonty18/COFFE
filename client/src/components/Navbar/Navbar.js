@@ -5,21 +5,11 @@ import { useDispatch } from 'react-redux';
 import decode from 'jwt-decode';
 
 
-
-import nature from '../../images/nature.svg';
-
-import logo1 from '../../images/logo1.svg';
-
-import travel from '../../images/travel.svg';
 import hobbyists from '../../images/hobbyists.png';
 import quiz from '../../images/quiz.png';
-import biking from '../../images/biking.svg';
-import cooking from '../../images/cooking.svg';
-import garden from '../../images/garden.svg';
-import view from '../../images/view.svg';
-import cam from '../../images/cam.svg';
-import creative from '../../images/creative.svg';
-import logo3 from '../../images/logo3.svg';
+import videos from '../../images/videos.png';
+import vid from '../../images/vid.png';
+
 
 import * as actionType from '../../constants/actionTypes';
 import useStyles from './styles';
@@ -37,16 +27,14 @@ const Navbar = () => {
   
     typography:{
      fontFamily: [
-     'Acme',
-     'sans-serif'
+      'Fresca', 
+      'sans-serif'
      ].join(','),
     }
  
   });
 
-  const toggleNav = () => {
-    setToggleMenu(!toggleMenu)
-  }
+
 
   const logout = () => {
     dispatch({ type: actionType.LOGOUT });
@@ -77,11 +65,15 @@ const Navbar = () => {
 
 
       <Link to="/" className={classes.brandContainer}>
-        <img className={classes.hobbyists} component={Link} to="/" src={hobbyists} alt="icon" height="60px" />
+        <img className={classes.hobbyists} component={Link} to="/" src={hobbyists} alt="icon" height="40px" />
       </Link>
 
       <Link to="/QuizHome" className={classes.brandContainer}>
-        <img className={classes.quiz} component={Link} to="/QuizHome" src={quiz} alt="icon" height="60px" />
+        <img className={classes.quiz} component={Link} to="/QuizHome" src={quiz} alt="icon" height="40px" />
+      </Link>
+
+      <Link to="/Dashboard" className={classes.brandContainer}>
+        <img  component={Link} to="/Dashboard" src={videos} alt="icon" height="40px" />
       </Link>
 
       <Toolbar className={classes.toolbar}>

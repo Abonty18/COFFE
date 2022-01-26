@@ -17,8 +17,8 @@ const QuizHome = ({ fetchQuestions }) => {
   
     typography:{
      fontFamily: [
-     'Acme',
-     'sans-serif'
+      'Fresca', 
+      'sans-serif'
      ].join(','),
     }
  
@@ -45,7 +45,7 @@ const QuizHome = ({ fetchQuestions }) => {
     <ThemeProvider theme={theme}>
     <div className="content">
       <div className="settings">
-        <span style={{ fontSize: 30 }}>Quiz Settings</span>
+        <span style={{ fontSize: 45,fontWeight:'normal' }}>Quiz Settings</span>
         <div className="settings__select">
           {error && <ErrorMessage>Please Fill All the fields</ErrorMessage>}
        
@@ -85,7 +85,7 @@ const QuizHome = ({ fetchQuestions }) => {
             variant="contained"
             color="primary"
             size="large"
-            style={{ width: 185 ,alignSelf: "center", marginTop: 10,borderRadius:'25px', height:'8vh'  }}
+            style={{ width: 185 ,alignSelf: "center", marginTop: 10,borderRadius:'25px', height:'8vh',fontSize: 20  }}
             onClick={handleSubmit}
           >
             Start Quiz

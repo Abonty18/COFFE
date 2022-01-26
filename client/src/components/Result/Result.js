@@ -21,7 +21,7 @@ const Result = ({ score }) => {
       <span className="title">Final Score : {score}</span>
       <Button className='btn'
         variant="contained"
-        color="secondary"
+        color="primary"
         
         size="large"
         style={{ alignSelf: "center", marginTop: 20,borderRadius:'25px', height:'6vh'   }}

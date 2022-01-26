@@ -30,8 +30,8 @@ const Home = () => {
   
    typography:{
     fontFamily: [
-    'Acme',
-    'sans-serif'
+      'Fresca', 
+      'sans-serif'
     ].join(','),
    }
 
