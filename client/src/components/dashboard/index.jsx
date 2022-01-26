@@ -1,23 +1,17 @@
-import React, { useState, useRef } from 'react';
+import React from 'react';
 import Sidebar from '../common/Sidebar';
 import Card from '../common/Card';
 import samples from './samples';
-import { Typography, TextField, Button } from '@material-ui/core/';
-import "./style.css";
 
-
-
-const Dashboard = () => {
-  return(
-  <div className='dash'>
+const Dashboard = () => (
+  <div className="flex flex-grow 1">
     <Sidebar />
-    <div className="dash1">
-      <div className="dash2">
+    <div className="bg-white-400 w-4/5">
+      <div className="w-full flex flex-wrap">
         {samples.map((sample) => (<Card sample={sample} />))}
       </div>
     </div>
   </div>
-  );
-  };
+);
 
 export default Dashboard;

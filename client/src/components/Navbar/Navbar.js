@@ -8,7 +8,7 @@ import decode from 'jwt-decode';
 import hobbyists from '../../images/hobbyists.png';
 import quiz from '../../images/quiz.png';
 import videos from '../../images/videos.png';
-import vid from '../../images/vid.png';
+import vidres from '../../images/vidres.png';
 
 
 import * as actionType from '../../constants/actionTypes';
@@ -65,15 +65,18 @@ const Navbar = () => {
 
 
       <Link to="/" className={classes.brandContainer}>
-        <img className={classes.hobbyists} component={Link} to="/" src={hobbyists} alt="icon" height="40px" />
+        {/* <img className={classes.hobbyists} component={Link} to="/" src={hobbyists} alt="icon" height="20px" /> */}
+        <h2 className={classes.hobbyists} fontWeight='bolder'>Hobbyists</h2>
       </Link>
 
       <Link to="/QuizHome" className={classes.brandContainer}>
-        <img className={classes.quiz} component={Link} to="/QuizHome" src={quiz} alt="icon" height="40px" />
+        {/* <img className={classes.quiz} component={Link} to="/QuizHome" src={quiz} alt="icon" height="40px" /> */}
+        <h2>QuizTime</h2>
       </Link>
 
       <Link to="/Dashboard" className={classes.brandContainer}>
-        <img  component={Link} to="/Dashboard" src={videos} alt="icon" height="40px" />
+        {/* <img  component={Link} to="/Dashboard" src={vidres} alt="icon" height="40px" /> */}
+        <h6>Resources</h6>
       </Link>
 
       <Toolbar className={classes.toolbar}>

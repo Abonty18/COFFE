@@ -71,6 +71,7 @@ export default makeStyles((theme) => ({
   hobbyists:{
 
     alignItems:'center',
+    
 
   },
 

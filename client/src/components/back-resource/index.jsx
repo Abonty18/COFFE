@@ -2,6 +2,7 @@ import React from 'react';
 import Sidebar from '../common/Sidebar';
 import Card from '../common/Card';
 import samples from './samples'
+import '../../tail.css';
 
 const BackendResource = () => (
 <div className="flex flex-grow 1">
